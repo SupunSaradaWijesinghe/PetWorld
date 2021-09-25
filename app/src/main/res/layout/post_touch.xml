@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/id_relativeLy"
+    android:background="@color/blue_shade_1" >
+
+    <TextView
+        android:id="@+id/id_tv_categoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:text="Category Name"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/idIVCenter"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/id_tv_categoryName"
+        android:layout_centerVertical="true"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/id_tv_breed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_tv_categoryName"
+        android:layout_margin="4dp"
+        android:layout_toRightOf="@id/idIVCenter"
+        android:padding="3dp"
+        android:text="Breed"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/id_tv_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_tv_breed"
+        android:layout_margin="4dp"
+        android:layout_toRightOf="@id/idIVCenter"
+        android:padding="3dp"
+        android:text="For"
+        android:textColor="@color/white" />
+
+
+    <TextView
+        android:id="@+id/id_tv_qty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_tv_budget"
+        android:layout_margin="4dp"
+        android:layout_toRightOf="@id/idIVCenter"
+        android:padding="3dp"
+        android:text="Quantity"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/id_tv_qty" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="Edit request"
+            android:textColor="@color/white"
+            android:id="@+id/id_btn_edit" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="View Request"
+            android:textColor="@color/white"
+            android:id="@+id/id_btn_view" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
