@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,16 +41,25 @@ public class CenterRVAdapter extends RecyclerView.Adapter<CenterRVAdapter.ViewHo
         CenterRVModal centerRVModal = centerRVModalArrayList.get(position);
         holder.centerNameTV.setText(centerRVModal.getCenterName());
         holder.centerFeeTV.setText("Rs."+centerRVModal.getCenterFee());
+        setAnimation(holder.itemView,position);
         Picasso.get().load(centerRVModal.getCenterImag()).into(holder.centerIV);
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                centerClickInterface.onCenterClick(position);
 
             }
         });
 
     }
 
+    private void setAnimation(View itemView,int position){
+        if(position > lastPos) {
+            Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+            itemView.setAnimation(animation);
+            lastPos = position;
+        }
+    }
     @Override
     public int getItemCount() {
         return centerRVModalArrayList.size();

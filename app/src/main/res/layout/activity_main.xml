@@ -25,6 +25,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id = "@+id/idAddFAB"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:src="@drawable/ic_add"
