@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Pet Care</string>
+    <string name="app_name">Pet World</string>
+    <string name="btn_pets">Pets</string>
+    <string name="btn_request">Request a pet</string>
+    <string name="btn_care">Pet care</string>
+    <string name="btn_food"><![CDATA[Pet foods & Accessories]]></string>
+    <string name="tv_welcome">Welcome to the Pet World!</string>
 </resources>
