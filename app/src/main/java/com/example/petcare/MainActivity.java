@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
                 startActivity(new Intent(MainActivity.this,AddDetails.class));
             }
         });
-        getAllCenters();
+          getAllCenters();
     }
 
     private void getAllCenters(){

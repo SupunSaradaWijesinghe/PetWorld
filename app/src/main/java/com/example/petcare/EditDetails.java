@@ -105,7 +105,7 @@ public class EditDetails extends AppCompatActivity {
     }
     private  void deleteCenter(){
         databaseReference.removeValue();
-        Toast.makeText(this,"Course Deleted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Centre Deleted", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(EditDetails.this,MainActivity.class));
 
     }
