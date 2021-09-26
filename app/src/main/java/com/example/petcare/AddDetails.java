@@ -54,7 +54,7 @@ public class AddDetails extends AppCompatActivity {
                 String centerLink = centerLinkEdt.getText().toString();
                 String centerDesc = centerDescEdt.getText().toString();
                 centerID = centerName;
-                CenterRVModal centerRVModal = new CenterRVModal(centerName,centerDesc,centerFee,centerFor,centerImg,centerLink,centerID);
+                CenterRVModal centerRVModal = new CenterRVModal(centerName, centerDesc,centerFee,centerFor,centerImg,centerLink, centerID);
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override

@@ -49,7 +49,7 @@ public class EditDetails extends AppCompatActivity {
             centerNameEdt.setText(centerRVModal.getCenterName());
             centerFeeEdt.setText(centerRVModal.getCenterFee());
             centerForEdt.setText(centerRVModal.getCenterFor());
-            centerImgEdt.setText(centerRVModal.getCenterImag());
+            centerImgEdt.setText(centerRVModal.getCenterImg());
             centerLinkEdt.setText(centerRVModal.getCenterLink());
             centerDescEdt.setText(centerRVModal.getCenterDescription());
             centerID = centerRVModal.getCenterID();
@@ -68,11 +68,11 @@ public class EditDetails extends AppCompatActivity {
                 String centerDesc = centerDescEdt.getText().toString();
 
                 Map<String,Object> map = new HashMap<>();
-                map.put("CenterName",centerName);
+                map.put("centerName",centerName);
                 map.put("centerDescription",centerDesc);
                 map.put("centerFee",centerFee);
                 map.put("centerFor",centerFor);
-                map.put("centerImag",centerImg);
+                map.put("centerImg",centerImg);
                 map.put("centerLink",centerLink);
                 map.put("centerID",centerID);
 

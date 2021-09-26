@@ -3,25 +3,27 @@ package com.example.petcare;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class CenterRVModal implements Parcelable {
+public class CenterRVModal implements Parcelable{
     private String centerName;
     private String centerDescription;
     private String centerFee;
     private String centerFor;
-    private String centerImag;
+    private String centerImg;
     private String centerLink;
     private String centerID;
+
 
     public CenterRVModal(){
 
     }
+
 
     protected CenterRVModal(Parcel in) {
         centerName = in.readString();
         centerDescription = in.readString();
         centerFee = in.readString();
         centerFor = in.readString();
-        centerImag = in.readString();
+        centerImg = in.readString();
         centerLink = in.readString();
         centerID = in.readString();
     }
@@ -70,12 +72,12 @@ public class CenterRVModal implements Parcelable {
         this.centerFor = centerFor;
     }
 
-    public String getCenterImag() {
-        return centerImag;
+    public String getCenterImg() {
+        return centerImg;
     }
 
-    public void setCenterImag(String centerImag) {
-        this.centerImag = centerImag;
+    public void setCenterImg(String centerImg) {
+        this.centerImg = centerImg;
     }
 
     public String getCenterLink() {
@@ -94,16 +96,14 @@ public class CenterRVModal implements Parcelable {
         this.centerID = centerID;
     }
 
-    public CenterRVModal(String centerName, String centerDescription, String centerFee, String centerFor, String centerImag, String centerLink, String centerID) {
+    public CenterRVModal(String centerName, String centerDescription, String centerFee, String centerFor, String centerImg, String centerLink, String centerID) {
         this.centerName = centerName;
         this.centerDescription = centerDescription;
         this.centerFee = centerFee;
         this.centerFor = centerFor;
-        this.centerImag = centerImag;
+        this.centerImg = centerImg;
         this.centerLink = centerLink;
         this.centerID = centerID;
-
-
     }
 
     @Override
@@ -117,7 +117,7 @@ public class CenterRVModal implements Parcelable {
         dest.writeString(centerDescription);
         dest.writeString(centerFee);
         dest.writeString(centerFor);
-        dest.writeString(centerImag);
+        dest.writeString(centerImg);
         dest.writeString(centerLink);
         dest.writeString(centerID);
     }

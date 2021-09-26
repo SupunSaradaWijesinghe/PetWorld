@@ -151,7 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:importantForAutofill="no"
-                    android:inputType="text"
+                    android:inputType="textMultiLine|textImeMultiLine"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
@@ -175,7 +175,7 @@
                     android:textColor="@color/white"
                     android:background="@drawable/custom_button_back"
                     android:id="@+id/idBtnUpdateCenter"
-                    android:text="Update \nCenter"
+                    android:text="Update\nCenter"
                     android:textAllCaps="false" />
                 <Button
                     android:layout_width="0dp"
@@ -185,7 +185,7 @@
                     android:textColor="@color/white"
                     android:background="@drawable/custom_button_back"
                     android:id="@+id/idBtnDeleteCenter"
-                    android:text="Update \nCenter"
+                    android:text="Update\nCenter"
                     android:textAllCaps="false" />
 
 
