@@ -53,7 +53,7 @@ public class AddPetRequest extends AppCompatActivity {
                 String contact = etContact.getText().toString();
                 String remarks = etRemarks.getText().toString();
                 requestID = breed;
-                PetRequest petReq = new PetRequest(petCategory,breed,budget,qty,contact,remarks,requestID);
+                PetRequest petReq = new PetRequest(petCategory,remarks,breed,qty,budget,contact,requestID);
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
