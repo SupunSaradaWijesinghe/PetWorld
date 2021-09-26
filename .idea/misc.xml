@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/PetWorld/app/src/main/res/layout/activity_add_details.xml" value="0.25" />
-        <entry key="..\:/PetWorld/app/src/main/res/layout/activity_add_pet_request.xml" value="0.18" />
+        <entry key="..\:/PetWorld/app/src/main/res/layout/activity_add_pet_request.xml" value="0.22" />
         <entry key="..\:/PetWorld/app/src/main/res/layout/activity_edit_pet_request.xml" value="0.2" />
         <entry key="..\:/PetWorld/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/PetWorld/app/src/main/res/layout/activity_main_pet_request.xml" value="0.18072916666666666" />
@@ -20,4 +20,11 @@
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK" />
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
+  </component>
 </project>
