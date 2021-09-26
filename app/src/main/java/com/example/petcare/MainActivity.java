@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
         addFAB = findViewById(R.id.idAddFAB);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Centers");
-       /* databaseReference = FirebaseDatabase.getInstance().getReference().child("Centers");*/
         centerRVModalArrayList=new ArrayList<>();
         bottomSheetRL = findViewById(R.id.idRLBSheet);
         mAuth = FirebaseAuth.getInstance();

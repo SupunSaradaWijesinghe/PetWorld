@@ -185,7 +185,7 @@
                     android:textColor="@color/white"
                     android:background="@drawable/custom_button_back"
                     android:id="@+id/idBtnDeleteCenter"
-                    android:text="Update\nCenter"
+                    android:text="Delete\nCenter"
                     android:textAllCaps="false" />
 
 
