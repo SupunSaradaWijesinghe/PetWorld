@@ -1,57 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_relativeLy"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/id_relativeLy"
-    android:background="@drawable/paws3" >
+    android:background="@drawable/paws6"
+    android:paddingLeft="15dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
 
     <TextView
         android:id="@+id/id_tv_categoryName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
         android:padding="4dp"
         android:text="Category Name"
-        android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="30sp"
         android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/idIVCenter"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/id_tv_categoryName"
-        android:layout_centerVertical="true"
-        android:layout_margin="4dp"
-        android:padding="4dp"
-        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/id_tv_breed"
-        android:layout_width="match_parent"
+        android:layout_width="376dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/id_tv_categoryName"
-        android:layout_margin="4dp"
-        android:layout_toRightOf="@id/idIVCenter"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
         android:padding="3dp"
         android:text="Breed"
-        android:textColor="@color/white" />
+        android:textColor="@color/purple_200"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/id_tv_budget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/id_tv_breed"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="100dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:layout_toRightOf="@id/idIVCenter"
         android:padding="3dp"
         android:text="Approximate Budget"
-        android:textColor="@color/white" />
+        android:textColor="@color/purple_200"
+        android:textStyle="bold"/>
 
 
     <TextView
@@ -59,38 +63,88 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/id_tv_budget"
-        android:layout_margin="4dp"
-        android:layout_toRightOf="@id/idIVCenter"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
         android:padding="3dp"
         android:text="Quantity"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/white" />
+        android:textColor="@color/purple_200"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/id_tv_cat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_tv_qty"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:padding="3dp"
+        android:text="Category"
+        android:textColor="@color/purple_200"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/id_tv_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_tv_cat"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:padding="3dp"
+        android:text="Contact No"
+        android:textColor="@color/purple_200"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/id_tv_rem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_tv_con"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:padding="3dp"
+        android:text="Remarks"
+        android:textColor="@color/purple_200"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/id_tv_rem"
+        android:layout_marginTop="150dp"
         android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_below="@id/id_tv_qty" >
+        android:weightSum="2">
 
         <Button
+            android:id="@+id/id_btn_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_margin="4dp"
+            android:layout_weight="2"
             android:text="Edit request"
             android:textColor="@color/white"
-            android:id="@+id/id_btn_edit" />
+            app:backgroundTint="#9C27B0" />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:text="View Request"
-            android:textColor="@color/white"
-            android:id="@+id/id_btn_view" />
 
     </LinearLayout>
 

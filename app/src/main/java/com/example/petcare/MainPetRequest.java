@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Activity;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -121,15 +122,22 @@ public class MainPetRequest extends AppCompatActivity implements RequestAdap.Pos
         TextView tv_breed = layout.findViewById(R.id.id_tv_breed);
         TextView tv_budget = layout.findViewById(R.id.id_tv_budget);
         TextView tv_qty = layout.findViewById(R.id.id_tv_qty);
-        ImageView centerIV = layout.findViewById(R.id.idIVCenter);
+        TextView tv_cat = layout.findViewById(R.id.id_tv_cat);
+        TextView tv_con = layout.findViewById(R.id.id_tv_con);
+        TextView tv_rem = layout.findViewById(R.id.id_tv_rem);
+        //ImageView centerIV = layout.findViewById(R.id.idIVCenter);
         Button btn_edit = layout.findViewById(R.id.id_btn_edit);
-        Button btn_view = layout.findViewById(R.id.id_btn_view);
+        //Button btn_view = layout.findViewById(R.id.id_btn_view);
 
-        tv_category.setText(petRequest.getPetCategory());
-        tv_breed.setText(petRequest.getPetBreed());
-        tv_budget.setText(petRequest.getBudget());
-        tv_qty.setText(petRequest.getQty());
-        Picasso.get().load(petRequest.getRemarks()).into(centerIV);
+        tv_category.setText("Category : " + petRequest.getPetCategory()+" Request");
+        tv_breed.setText("Breed : " + petRequest.getPetBreed());
+        tv_budget.setText("Budget : " + petRequest.getBudget());
+        tv_qty.setText("Qty : " + petRequest.getQty());
+        tv_cat.setText("Category: " + petRequest.getPetCategory());
+        tv_con.setText("Contact No : " + petRequest.getContactNo());
+        tv_rem.setText("Remarks : " + petRequest.getRemarks());
+
+        //Picasso.get().load(petRequest.getRemarks()).into(centerIV);
 
         btn_edit.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -139,14 +147,14 @@ public class MainPetRequest extends AppCompatActivity implements RequestAdap.Pos
                 startActivity(i);
             }
         });
-        btn_view.setOnClickListener(new View.OnClickListener(){
+        /**btn_view.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent i = new Intent(MainPetRequest.this,EditPetRequest.class);
                 i.putExtra("request",petRequest);
                 startActivity(i);
             }
-        });
+        });**/
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){

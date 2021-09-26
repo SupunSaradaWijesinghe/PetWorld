@@ -10,43 +10,92 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/blue_shade_1" >
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/id_req_post"
-            android:scaleType="centerCrop" />
+        android:layout_height="250dp"
+        android:background="@drawable/paws"
+        >
 
         <TextView
+            android:id="@+id/id_tv_topic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Category Name"
-            android:layout_toLeftOf="@id/id_tv_breed"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_below="@id/id_req_post"
-            android:layout_margin="3dp"
-            android:singleLine="true"
-            android:id="@+id/id_tv_category"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="3dp"
             android:padding="4dp"
-            android:textSize="15sp" />
+            android:text="Category Name"
+            android:textColor="#E91E63"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/id_tv_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_tv_topic"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="3dp"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:text="Category Name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/id_tv_breed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Breed"
-            android:textColor="@color/white"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/id_req_post"
-            android:layout_margin="3dp"
-            android:singleLine="true"
-            android:id="@+id/id_tv_breed"
+            android:layout_below="@id/id_tv_category"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="3dp"
             android:padding="4dp"
-            android:textStyle="bold"
-            android:textSize="15sp" />
+            android:singleLine="true"
+            android:text="Breed"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/id_tv_pstQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_tv_breed"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="3dp"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:text="Qty"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_more"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/id_tv_pstQty"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="3dp"
+            android:textSize="10sp"
+            android:background="@color/blue_shade_1"
+            android:text="Touch For more..."
+            android:textColor="@color/white" />
+
 
     </RelativeLayout>
 
