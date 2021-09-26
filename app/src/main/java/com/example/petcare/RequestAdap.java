@@ -42,7 +42,7 @@ public class RequestAdap extends RecyclerView.Adapter<RequestAdap.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull RequestAdap.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         PetRequest petRequest = petRequestArrayList.get(position);
-        holder.tv_topic.setText(petRequest.getPetCategory() + "Request !!!");
+        holder.tv_topic.setText(petRequest.getPetCategory() + "  Request !!!");
         holder.tv_category.setText("Category : " + petRequest.getPetCategory());
         holder.tv_breed.setText("Breed : " + petRequest.getPetBreed());
         holder.tv_pstQTY.setText("Quantity : " + petRequest.getQty());

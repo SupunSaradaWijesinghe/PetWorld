@@ -23,16 +23,21 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/id_btn_float"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id = "@+id/id_btn_float"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_add"
-        app:tint="@color/white"
-        app:backgroundTint="@color/blue_shade_2"
-        android:layout_margin="20dp"
-        android:layout_alignParentRight="true" />
+        app:backgroundTint="@color/design_default_color_primary_dark"
+        app:tint="@color/white" />
 
 
 </RelativeLayout>

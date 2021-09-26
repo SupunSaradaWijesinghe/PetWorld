@@ -69,7 +69,7 @@ public class MainPetRequest extends AppCompatActivity implements RequestAdap.Pos
         });
         getAllPosts();
     }
-
+    //get all posts from the database
     private void getAllPosts(){
         petRequestArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
@@ -129,7 +129,7 @@ public class MainPetRequest extends AppCompatActivity implements RequestAdap.Pos
         Button btn_edit = layout.findViewById(R.id.id_btn_edit);
         //Button btn_view = layout.findViewById(R.id.id_btn_view);
 
-        tv_category.setText("Category : " + petRequest.getPetCategory()+" Request");
+        tv_category.setText(petRequest.getPetCategory()+" Request");
         tv_breed.setText("Breed : " + petRequest.getPetBreed());
         tv_budget.setText("Budget : " + petRequest.getBudget());
         tv_qty.setText("Qty : " + petRequest.getQty());
