@@ -13,6 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetCare">
         <activity
+            android:name=".MainPetRequest"
+            android:exported="true" />
+        <activity
+            android:name=".EditPetRequest"
+            android:exported="true" />
+        <activity
+            android:name=".AddPetRequest"
+            android:exported="true" />
             android:name=".MainPetFood"
             android:exported="true" />
         <activity

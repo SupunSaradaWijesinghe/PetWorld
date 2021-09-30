@@ -99,18 +99,18 @@
         android:textAllCaps="false" />
 
 
-     <TextView
-         android:id="@+id/idTVLogin"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_below="@id/idBtnRegister"
-         android:layout_marginTop="30dp"
-         android:gravity="center"
-         android:text="Already a User ? Login Here"
-         android:textAlignment="center"
-         android:textAllCaps="false"
-         android:textColor="@color/white"
-         android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/idTVLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBtnRegister"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Already a User ? Login Here"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
     <ProgressBar
         android:layout_width="match_parent"
