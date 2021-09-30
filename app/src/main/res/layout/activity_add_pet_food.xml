@@ -5,30 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_shade_1"
-    tools:context=".EditDetails">
+    tools:context=".AddPetFood">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="20dp"
-                android:hint="Enter Center Name"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:hint="Enter Seller's Name"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
+
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterName"
+                    android:id="@+id/idEdtSellerName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -43,15 +44,88 @@
                 style="@style/TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:hint="Enter Channeling fee"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:hint="Enter Brand Name"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
+
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterFee"
+                    android:id="@+id/idEdtBrandName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:hint="Enter Food Type"
+                android:padding="5dp"
+                android:textColorHint="@color/white"
+                app:hintTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idEdtFoodType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:hint="Weight(kg)"
+                android:padding="5dp"
+                android:textColorHint="@color/white"
+                app:hintTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idEdtWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:hint="Enter Price "
+                android:padding="5dp"
+                android:textColorHint="@color/white"
+                app:hintTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idEdtPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -62,92 +136,44 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:hint="Enter Location"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:hint="Contact Number"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
+
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterLocation"
+                    android:id="@+id/idEdtContectNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:hint="Enter center image Link"
+                android:layout_height="150dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:hint="Description"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
+
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterImageLink"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/TextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:hint="Enter center Link"
-                android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterLink"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/TextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:hint="Enter center discription"
-                android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterDesc"
+                    android:id="@+id/idEdtDescription"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:importantForAutofill="no"
@@ -157,57 +183,59 @@
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
 
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="20dp"
-                android:weightSum="2"
-                android:orientation="horizontal">
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:hint="Image"
+                android:padding="5dp"
+                android:textColorHint="@color/white"
+                app:hintTextColor="@color/white">
 
-                <Button
-                    android:layout_width="0dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idEdtImageLink"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
                     android:textColor="@color/white"
-                    android:background="@drawable/custom_button_back"
-                    android:id="@+id/idBtnUpdateCenter"
-                    android:text="Update\nCenter"
-                    android:textAllCaps="false" />
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:background="@drawable/custom_button_back"
-                    android:id="@+id/idBtnDeleteCenter"
-                    android:text="Delete\nCenter"
-                    android:textAllCaps="false" />
+                    android:textColorHint="@color/white"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/idBtnSubmitFood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/custom_button_back"
+                android:text="Submit"
+                android:textAllCaps="false" />
 
 
-            </LinearLayout>
 
 
         </LinearLayout>
 
         <ProgressBar
+            android:id="@+id/idPBLoading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:id="@+id/idPBLoading"
             android:indeterminate="true"
             android:indeterminateDrawable="@drawable/progress_back"
-            android:visibility="gone"/>
-
-
+            android:visibility="gone" />
     </RelativeLayout>
-
-
-
 
 </ScrollView>

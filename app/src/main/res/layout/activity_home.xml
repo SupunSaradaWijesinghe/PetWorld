@@ -6,12 +6,12 @@
     android:id="@+id/idRLHome"
     android:layout_height="match_parent"
     android:background="@color/blue_shade_1"
-    tools:context=".MainActivity">
+    tools:context=".HomeActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVCenters"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:id="@+id/idRVPets" />
 
     <ProgressBar
         android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id = "@+id/idAddFAB"
         android:layout_alignParentBottom="true"

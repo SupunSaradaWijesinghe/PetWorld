@@ -64,7 +64,11 @@ public class LoginActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(LoginActivity.this,"Login Successfull",Toast.LENGTH_SHORT).show();
+
                                 Intent i = new Intent(LoginActivity.this,MainPetRequest.class);
+
+                                Intent i = new Intent(LoginActivity.this,MainPetFood.class);
+
                                 startActivity(i);
                                 finish();
                             } else {
@@ -84,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         if(user != null){
             Intent i = new Intent(LoginActivity.this, MainPetRequest.class);
+            Intent i = new Intent(LoginActivity.this, MainPetFood.class);
             startActivity(i);
             this.finish();
         }

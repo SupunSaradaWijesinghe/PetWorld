@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_shade_1"
-    tools:context=".EditDetails">
-
+    tools:context=".AddPetActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
@@ -23,12 +22,12 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="20dp"
-                android:hint="Enter Center Name"
+                android:hint="Enter Breed"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterName"
+                    android:id="@+id/idEdtBreedName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -46,12 +45,12 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:hint="Enter Channeling fee"
+                android:hint="Enter Pet Price"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterFee"
+                    android:id="@+id/idEdtPetPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -75,7 +74,7 @@
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterLocation"
+                    android:id="@+id/idEdtPetLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -94,12 +93,12 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:hint="Enter center image Link"
+                android:hint="Enter pet image Link"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterImageLink"
+                    android:id="@+id/idEdtPetImageLink"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -118,12 +117,12 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:hint="Enter center Link"
+                android:hint="Enter pet Link"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterLink"
+                    android:id="@+id/idEdtPetLink"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -142,56 +141,34 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:hint="Enter center discription"
+                android:hint="Enter description"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterDesc"
+                    android:id="@+id/idEdtPetDesc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine|textImeMultiLine"
-                    android:singleLine="false"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="20dp"
-                android:weightSum="2"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:background="@drawable/custom_button_back"
-                    android:id="@+id/idBtnUpdateCenter"
-                    android:text="Update\nCenter"
-                    android:textAllCaps="false" />
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:textColor="@color/white"
-                    android:background="@drawable/custom_button_back"
-                    android:id="@+id/idBtnDeleteCenter"
-                    android:text="Delete\nCenter"
-                    android:textAllCaps="false" />
-
-
-            </LinearLayout>
-
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_button_back"
+                android:id="@+id/idBtnAddpet"
+                android:text="Add Pet"
+                android:textAllCaps="false" />
 
         </LinearLayout>
 
@@ -206,8 +183,5 @@
 
 
     </RelativeLayout>
-
-
-
 
 </ScrollView>

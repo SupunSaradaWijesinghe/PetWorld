@@ -21,6 +21,19 @@
         <activity
             android:name=".AddPetRequest"
             android:exported="true" />
+            android:name=".MainPetFood"
+            android:exported="true" />
+        <activity
+            android:name=".EditPetFood"
+            android:exported="true" />
+        <activity
+            android:name=".AddPetFood"
+            android:exported="true" />
+        <activity android:name=".MainActivity2"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".EditPetActivity" />
+        <activity android:name=".AddPetActivity" />
+
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

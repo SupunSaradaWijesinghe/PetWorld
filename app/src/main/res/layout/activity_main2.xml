@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+
+    <!--<include
+        android:id="@+id/include"
+        layout="@layout/toolbar2" />-->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pet_world" />
+
+    <Button
+        android:id="@+id/btn_pets"
+        android:layout_width="316dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="40dp"
+        android:text="pets"
+        app:backgroundTint="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/btn_request"
+        android:layout_width="316dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/btn_request"
+        app:backgroundTint="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pets" />
+
+    <Button
+        android:id="@+id/btn_care"
+        android:layout_width="316dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="35dp"
+        android:text="Pet Care"
+        app:backgroundTint="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_request" />
+
+    <Button
+        android:id="@+id/btn_food"
+        android:layout_width="316dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="35dp"
+        android:text="pet food and  accessories"
+        app:backgroundTint="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_care" />
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="214dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:text="Welcome to the Pet World!"
+        android:textColor="#EF3333"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_food" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

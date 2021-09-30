@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,41 +15,40 @@
         android:background="@color/blue_shade_1" >
 
         <ImageView
+            android:id="@+id/idIVFood"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/idIVCenter"
             android:scaleType="centerCrop" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Center Name"
-            android:layout_toLeftOf="@id/idTVLocation"
+            android:text="Brand Name"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_below="@id/idIVCenter"
+            android:layout_below="@+id/idIVFood"
             android:layout_margin="3dp"
             android:singleLine="true"
-            android:id="@+id/idTVCenterName"
+            android:id="@+id/idTVBrandName"
+            android:layout_toLeftOf="@id/idTVPrice"
             android:padding="4dp"
-            android:textSize="15sp" />
-
+            android:textSize="15sp"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Location"
-            android:textColor="@color/white"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/idIVCenter"
+            android:text="Price"
+            android:textSize="15sp"
+            android:padding="4dp"
             android:layout_margin="3dp"
             android:singleLine="true"
-            android:id="@+id/idTVLocation"
-            android:padding="4dp"
+            android:layout_below="@id/idIVFood"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/idTVPrice"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="15sp" />
+            android:layout_alignParentRight="true"/>
+
 
     </RelativeLayout>
-
 
 </androidx.cardview.widget.CardView>

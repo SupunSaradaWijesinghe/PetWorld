@@ -32,67 +32,67 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements CenterRVAdapter.CenterClickInterface{
-    private RecyclerView centerRV;
+public class HomeActivity extends AppCompatActivity implements PetRVAdapter.PetClickInterface{
+    private RecyclerView petRV;
     private ProgressBar loadingPB;
     private FloatingActionButton addFAB;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private ArrayList<CenterRVModal>centerRVModalArrayList;
+    private ArrayList<PetRVModal> petRVModalArrayList;
     private RelativeLayout bottomSheetRL;
-    private CenterRVAdapter centerRVAdapter;
+    private PetRVAdapter petRVAdapter;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        centerRV = findViewById(R.id.idRVCenters);
+        setContentView(R.layout.activity_home);
+        petRV = findViewById(R.id.idRVPets);
         loadingPB = findViewById(R.id.idPBLoading);
         addFAB = findViewById(R.id.idAddFAB);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Centers");
-        centerRVModalArrayList=new ArrayList<>();
+        databaseReference = firebaseDatabase.getReference("Pets");
+        petRVModalArrayList=new ArrayList<>();
         bottomSheetRL = findViewById(R.id.idRLBSheet);
         mAuth = FirebaseAuth.getInstance();
-        centerRVAdapter = new CenterRVAdapter(centerRVModalArrayList,this,this);
-        centerRV.setLayoutManager(new LinearLayoutManager(this));
-        centerRV.setAdapter(centerRVAdapter);
+        petRVAdapter = new PetRVAdapter(petRVModalArrayList,this,this);
+        petRV.setLayoutManager(new LinearLayoutManager(this));
+        petRV.setAdapter(petRVAdapter);
         addFAB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this,AddDetails.class));
+                startActivity(new Intent(HomeActivity.this,AddPetActivity.class));
             }
         });
-          getAllCenters();
+        getAllPets();
     }
 
-    private void getAllCenters(){
-        centerRVModalArrayList.clear();
+    private void getAllPets(){
+        petRVModalArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
                 loadingPB.setVisibility(View.GONE);
-               centerRVModalArrayList.add(snapshot.getValue(CenterRVModal.class));
-                centerRVAdapter.notifyDataSetChanged();
+                petRVModalArrayList.add(snapshot.getValue(PetRVModal.class));
+                petRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
                 loadingPB.setVisibility(View.GONE);
-                centerRVAdapter.notifyDataSetChanged();
+                petRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildRemoved(@NonNull  DataSnapshot snapshot) {
                 loadingPB.setVisibility(View.GONE);
-                centerRVAdapter.notifyDataSetChanged();
+                petRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildMoved(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
                 loadingPB.setVisibility(View.GONE);
-                centerRVAdapter.notifyDataSetChanged();
+                petRVAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -103,36 +103,36 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
     }
 
     @Override
-    public void onCenterClick(int position) {
-        displayBottomSheet(centerRVModalArrayList.get(position));
+    public void onPetClick(int position) {
+        displayBottomSheet(petRVModalArrayList.get(position));
     }
-    private void displayBottomSheet(CenterRVModal centerRVModal) {
+    private void displayBottomSheet(PetRVModal petRVModal) {
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-        View layout = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_dialog,bottomSheetRL);
+        View layout = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_dialog_binura,bottomSheetRL);
         bottomSheetDialog.setContentView(layout);
         bottomSheetDialog.setCancelable(false);
         bottomSheetDialog.setCanceledOnTouchOutside(true);
         bottomSheetDialog.show();
 
-        TextView centerNameTV = layout.findViewById(R.id.idTVCenterName);
-        TextView centerDescTV = layout.findViewById(R.id.idTVDescription);
-        TextView centerLocationTV = layout.findViewById(R.id.idTVLocation);
-        TextView centerFeeTV = layout.findViewById(R.id.idTVFee);
-        ImageView centerIV = layout.findViewById(R.id.idIVCenter);
-        Button editBtn = layout.findViewById(R.id.idBtnEdit);
-        Button viewDetailsBtn = layout.findViewById(R.id.idBtnViewDetails);
+        TextView petBreedTV = layout.findViewById(R.id.idTVPetBreed);
+        TextView petDescTV = layout.findViewById(R.id.idTVDescrip);
+        TextView petLocationTV = layout.findViewById(R.id.idTVLocationPet);
+        TextView petPriceTV = layout.findViewById(R.id.idTVPricce);
+        ImageView petIV = layout.findViewById(R.id.idIVPet);
+        Button editBtn = layout.findViewById(R.id.idBtnPetEdit);
+        Button viewDetailsBtn = layout.findViewById(R.id.idBtnPetViewDetails);
 
-        centerNameTV.setText(centerRVModal.getCenterName());
-        centerDescTV.setText(centerRVModal.getCenterDescription());
-        centerLocationTV.setText("Location:"+centerRVModal.getCenterLocation());
-        centerFeeTV.setText("Channeling Fee Rs."+centerRVModal.getCenterFee());
-        Picasso.get().load(centerRVModal.getCenterImg()).into(centerIV);
+        petBreedTV.setText(petRVModal.getPetBreed());
+        petDescTV.setText(petRVModal.getPetDescription());
+        petLocationTV.setText(petRVModal.getPetLocation());
+        petPriceTV.setText("Rs."+petRVModal.getPetPrice());
+        Picasso.get().load(petRVModal.getPetImg()).into(petIV);
 
         editBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i = new Intent(MainActivity.this,EditDetails.class);
-                i.putExtra("center",centerRVModal);
+                Intent i = new Intent(HomeActivity.this,EditPetActivity.class);
+                i.putExtra("pet",petRVModal);
                 startActivity(i);
             }
         });
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
             @Override
             public void onClick(View v){
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(centerRVModal.getCenterLink()));
+                i.setData(Uri.parse(petRVModal.getPetLink()));
                 startActivity(i);
             }
         });
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
             case R.id.idLogOut:
                 Toast.makeText(this,"User Logged Out..", Toast.LENGTH_SHORT).show();
                 mAuth.signOut();
-                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                Intent i = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(i);
                 this.finish();
                 return true;
