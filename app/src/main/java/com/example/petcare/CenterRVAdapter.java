@@ -1,5 +1,6 @@
 package com.example.petcare;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,8 @@ public class CenterRVAdapter extends RecyclerView.Adapter<CenterRVAdapter.ViewHo
     }
 
     @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+
     public void onBindViewHolder(@NonNull  CenterRVAdapter.ViewHolder holder, int position) {
 
         CenterRVModal centerRVModal = centerRVModalArrayList.get(position);
