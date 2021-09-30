@@ -19,9 +19,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class CenterRVAdapter extends RecyclerView.Adapter<CenterRVAdapter.ViewHolder>{
-    private ArrayList<CenterRVModal> centerRVModalArrayList;
-    private Context context;
     int lastPos = -1;
+    private ArrayList<CenterRVModal>centerRVModalArrayList;
+    private Context context;
     private CenterClickInterface centerClickInterface;
 
     public CenterRVAdapter(ArrayList<CenterRVModal> centerRVModalArrayList, Context context, CenterClickInterface centerClickInterface) {
@@ -32,34 +32,37 @@ public class CenterRVAdapter extends RecyclerView.Adapter<CenterRVAdapter.ViewHo
 
     @NonNull
     @Override
-    public CenterRVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.course_rv_item,parent,false);
+    public CenterRVAdapter.ViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.center_rv_item,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+
+    public void onBindViewHolder(@NonNull  CenterRVAdapter.ViewHolder holder, int position) {
+
         CenterRVModal centerRVModal = centerRVModalArrayList.get(position);
         holder.centerNameTV.setText(centerRVModal.getCenterName());
-        holder.centerFeeTV.setText("Rs."+centerRVModal.getCenterFee());
+        holder.centerLocationTV.setText(centerRVModal.getCenterLocation());
+
+        //holder.centerFeeTV.setText("Rs. "+centerRVModal.getCenterFee());
+        Picasso.get().load(centerRVModal.getCenterImg()).into(holder.centerIV);
         setAnimation(holder.itemView,position);
-        Picasso.get().load(centerRVModal.getCenterImag()).into(holder.centerIV);
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 centerClickInterface.onCenterClick(position);
-
             }
         });
-
     }
 
-    private void setAnimation(View itemView,int position){
-        if(position > lastPos) {
-            Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
-            itemView.setAnimation(animation);
-            lastPos = position;
-        }
+    private void setAnimation(View itemView, int position){
+            if(position>lastPos){
+                Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+                itemView.setAnimation(animation);
+                lastPos = position;
+            }
     }
     @Override
     public int getItemCount() {
@@ -72,12 +75,13 @@ public class CenterRVAdapter extends RecyclerView.Adapter<CenterRVAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView centerNameTV,centerFeeTV;
+        private TextView centerNameTV,centerLocationTV;
         private ImageView centerIV;
-        public ViewHolder(@NonNull View itemView) {
+
+        public ViewHolder(@NonNull  View itemView) {
             super(itemView);
             centerNameTV = itemView.findViewById(R.id.idTVCenterName);
-            centerFeeTV = itemView.findViewById(R.id.idTVFee);
+            centerLocationTV = itemView.findViewById(R.id.idTVLocation);
             centerIV = itemView.findViewById(R.id.idIVCenter);
 
         }

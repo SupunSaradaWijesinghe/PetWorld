@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AddDetails extends AppCompatActivity {
 
-    private TextInputEditText centerNameEdt, centerFeeEdt, centerForEdt, centerImgEdt, centerLinkEdt, centerDescEdt;
+    private TextInputEditText centerNameEdt, centerFeeEdt, centerLocationEdt, centerImgEdt, centerLinkEdt, centerDescEdt;
     private Button addCenterBtn;
     private ProgressBar loadingPB;
     private FirebaseDatabase firebaseDatabase;
@@ -34,7 +34,7 @@ public class AddDetails extends AppCompatActivity {
         setContentView(R.layout.activity_add_details);
         centerNameEdt = findViewById(R.id.idEdtCenterName);
         centerFeeEdt = findViewById(R.id.idEdtCenterFee);
-        centerForEdt = findViewById(R.id.idEdtCenterFor);
+        centerLocationEdt = findViewById(R.id.idEdtCenterLocation);
         centerImgEdt = findViewById(R.id.idEdtCenterImageLink);
         centerLinkEdt = findViewById(R.id.idEdtCenterLink);
         centerDescEdt = findViewById(R.id.idEdtCenterDesc);
@@ -49,12 +49,12 @@ public class AddDetails extends AppCompatActivity {
                 loadingPB.setVisibility(View.VISIBLE);
                 String centerName = centerNameEdt.getText().toString();
                 String centerFee = centerFeeEdt.getText().toString();
-                String centerFor = centerForEdt.getText().toString();
+                String centerLocation = centerLocationEdt.getText().toString();
                 String centerImg = centerImgEdt.getText().toString();
                 String centerLink = centerLinkEdt.getText().toString();
                 String centerDesc = centerDescEdt.getText().toString();
                 centerID = centerName;
-                CenterRVModal centerRVModal = new CenterRVModal(centerName,centerDesc,centerFee,centerFor,centerImg,centerLink,centerID);
+                CenterRVModal centerRVModal = new CenterRVModal(centerName, centerDesc,centerFee,centerLocation,centerImg,centerLink, centerID);
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
