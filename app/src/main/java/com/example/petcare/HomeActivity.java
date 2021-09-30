@@ -64,10 +64,10 @@ public class HomeActivity extends AppCompatActivity implements PetRVAdapter.PetC
                 startActivity(new Intent(HomeActivity.this,AddPetActivity.class));
             }
         });
-        getAllpets();
+        getAllPets();
     }
 
-    private void getAllpets(){
+    private void getAllPets(){
         petRVModalArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
