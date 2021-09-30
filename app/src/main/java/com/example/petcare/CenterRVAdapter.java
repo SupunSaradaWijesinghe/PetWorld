@@ -41,7 +41,9 @@ public class CenterRVAdapter extends RecyclerView.Adapter<CenterRVAdapter.ViewHo
 
         CenterRVModal centerRVModal = centerRVModalArrayList.get(position);
         holder.centerNameTV.setText(centerRVModal.getCenterName());
-        holder.centerFeeTV.setText("Rs. "+centerRVModal.getCenterFee());
+        holder.centerLocationTV.setText(centerRVModal.getCenterLocation());
+
+        //holder.centerFeeTV.setText("Rs. "+centerRVModal.getCenterFee());
         Picasso.get().load(centerRVModal.getCenterImg()).into(holder.centerIV);
         setAnimation(holder.itemView,position);
         holder.itemView.setOnClickListener(new View.OnClickListener(){
@@ -70,13 +72,13 @@ public class CenterRVAdapter extends RecyclerView.Adapter<CenterRVAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView centerNameTV,centerFeeTV;
+        private TextView centerNameTV,centerLocationTV;
         private ImageView centerIV;
 
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
             centerNameTV = itemView.findViewById(R.id.idTVCenterName);
-            centerFeeTV = itemView.findViewById(R.id.idTVFee);
+            centerLocationTV = itemView.findViewById(R.id.idTVLocation);
             centerIV = itemView.findViewById(R.id.idIVCenter);
 
         }

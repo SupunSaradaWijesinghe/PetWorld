@@ -74,7 +74,7 @@
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterFor"
+                    android:id="@+id/idEdtCenterLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"

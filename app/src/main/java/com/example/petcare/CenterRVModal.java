@@ -7,7 +7,7 @@ public class CenterRVModal implements Parcelable{
     private String centerName;
     private String centerDescription;
     private String centerFee;
-    private String centerFor;
+    private String centerLocation;
     private String centerImg;
     private String centerLink;
     private String centerID;
@@ -22,7 +22,7 @@ public class CenterRVModal implements Parcelable{
         centerName = in.readString();
         centerDescription = in.readString();
         centerFee = in.readString();
-        centerFor = in.readString();
+        centerLocation= in.readString();
         centerImg = in.readString();
         centerLink = in.readString();
         centerID = in.readString();
@@ -64,12 +64,12 @@ public class CenterRVModal implements Parcelable{
         this.centerFee = centerFee;
     }
 
-    public String getCenterFor() {
-        return centerFor;
+    public String getCenterLocation() {
+        return centerLocation;
     }
 
-    public void setCenterFor(String centerFor) {
-        this.centerFor = centerFor;
+    public void setCenterLocation(String centerLocation) {
+        this.centerLocation = centerLocation;
     }
 
     public String getCenterImg() {
@@ -96,11 +96,11 @@ public class CenterRVModal implements Parcelable{
         this.centerID = centerID;
     }
 
-    public CenterRVModal(String centerName, String centerDescription, String centerFee, String centerFor, String centerImg, String centerLink, String centerID) {
+    public CenterRVModal(String centerName, String centerDescription, String centerFee, String centerLocation, String centerImg, String centerLink, String centerID) {
         this.centerName = centerName;
         this.centerDescription = centerDescription;
         this.centerFee = centerFee;
-        this.centerFor = centerFor;
+        this.centerLocation = centerLocation;
         this.centerImg = centerImg;
         this.centerLink = centerLink;
         this.centerID = centerID;
@@ -116,7 +116,7 @@ public class CenterRVModal implements Parcelable{
         dest.writeString(centerName);
         dest.writeString(centerDescription);
         dest.writeString(centerFee);
-        dest.writeString(centerFor);
+        dest.writeString(centerLocation);
         dest.writeString(centerImg);
         dest.writeString(centerLink);
         dest.writeString(centerID);

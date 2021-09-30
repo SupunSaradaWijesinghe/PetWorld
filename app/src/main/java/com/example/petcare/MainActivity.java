@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
     private FloatingActionButton addFAB;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private ArrayList<CenterRVModal> centerRVModalArrayList;
+    private ArrayList<CenterRVModal>centerRVModalArrayList;
     private RelativeLayout bottomSheetRL;
     private CenterRVAdapter centerRVAdapter;
     private FirebaseAuth mAuth;
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
 
         TextView centerNameTV = layout.findViewById(R.id.idTVCenterName);
         TextView centerDescTV = layout.findViewById(R.id.idTVDescription);
-        TextView centerForTV = layout.findViewById(R.id.idTVFor);
+        TextView centerLocationTV = layout.findViewById(R.id.idTVLocation);
         TextView centerFeeTV = layout.findViewById(R.id.idTVFee);
         ImageView centerIV = layout.findViewById(R.id.idIVCenter);
         Button editBtn = layout.findViewById(R.id.idBtnEdit);
@@ -124,8 +124,8 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
 
         centerNameTV.setText(centerRVModal.getCenterName());
         centerDescTV.setText(centerRVModal.getCenterDescription());
-        centerForTV.setText(centerRVModal.getCenterFor());
-        centerFeeTV.setText("Rs."+centerRVModal.getCenterFee());
+        centerLocationTV.setText("Location:"+centerRVModal.getCenterLocation());
+        centerFeeTV.setText("Channeling Fee Rs."+centerRVModal.getCenterFee());
         Picasso.get().load(centerRVModal.getCenterImg()).into(centerIV);
 
         editBtn.setOnClickListener(new View.OnClickListener(){

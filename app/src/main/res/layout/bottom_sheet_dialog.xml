@@ -38,14 +38,14 @@
         android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/idTVFor"
+        android:id="@+id/idTVLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVDescription"
         android:layout_margin="4dp"
         android:layout_toRightOf="@id/idIVCenter"
         android:padding="3dp"
-        android:text="For"
+        android:text="Location"
         android:textColor="@color/white" />
 
 
@@ -53,7 +53,7 @@
         android:id="@+id/idTVFee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVFor"
+        android:layout_below="@id/idTVLocation"
         android:layout_margin="4dp"
         android:layout_toRightOf="@id/idIVCenter"
         android:padding="3dp"
@@ -67,7 +67,7 @@
           android:layout_height="wrap_content"
           android:orientation="horizontal"
           android:weightSum="2"
-          android:layout_below="@id/idIVCenter" >
+          android:layout_below="@id/idTVFee" >
 
           <Button
               android:layout_width="0dp"

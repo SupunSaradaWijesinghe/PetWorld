@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class EditDetails extends AppCompatActivity {
 
-    private TextInputEditText centerNameEdt, centerFeeEdt, centerForEdt, centerImgEdt, centerLinkEdt, centerDescEdt;
+    private TextInputEditText centerNameEdt, centerFeeEdt, centerLocationEdt, centerImgEdt, centerLinkEdt, centerDescEdt;
     private Button updateCenterBtn,deleteCenterBtn;
     private ProgressBar loadingPB;
     private FirebaseDatabase firebaseDatabase;
@@ -37,7 +37,7 @@ public class EditDetails extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         centerNameEdt = findViewById(R.id.idEdtCenterName);
         centerFeeEdt = findViewById(R.id.idEdtCenterFee);
-        centerForEdt = findViewById(R.id.idEdtCenterFor);
+        centerLocationEdt = findViewById(R.id.idEdtCenterLocation);
         centerImgEdt = findViewById(R.id.idEdtCenterImageLink);
         centerLinkEdt = findViewById(R.id.idEdtCenterLink);
         centerDescEdt = findViewById(R.id.idEdtCenterDesc);
@@ -48,7 +48,7 @@ public class EditDetails extends AppCompatActivity {
         if(centerRVModal!=null){
             centerNameEdt.setText(centerRVModal.getCenterName());
             centerFeeEdt.setText(centerRVModal.getCenterFee());
-            centerForEdt.setText(centerRVModal.getCenterFor());
+            centerLocationEdt.setText(centerRVModal.getCenterLocation());
             centerImgEdt.setText(centerRVModal.getCenterImg());
             centerLinkEdt.setText(centerRVModal.getCenterLink());
             centerDescEdt.setText(centerRVModal.getCenterDescription());
@@ -62,7 +62,7 @@ public class EditDetails extends AppCompatActivity {
                 loadingPB.setVisibility(View.VISIBLE);
                 String centerName = centerNameEdt.getText().toString();
                 String centerFee = centerFeeEdt.getText().toString();
-                String centerFor = centerForEdt.getText().toString();
+                String centerLocation = centerLocationEdt.getText().toString();
                 String centerImg = centerImgEdt.getText().toString();
                 String centerLink = centerLinkEdt.getText().toString();
                 String centerDesc = centerDescEdt.getText().toString();
@@ -71,7 +71,7 @@ public class EditDetails extends AppCompatActivity {
                 map.put("centerName",centerName);
                 map.put("centerDescription",centerDesc);
                 map.put("centerFee",centerFee);
-                map.put("centerFor",centerFor);
+                map.put("centerLocation",centerLocation);
                 map.put("centerImg",centerImg);
                 map.put("centerLink",centerLink);
                 map.put("centerID",centerID);
