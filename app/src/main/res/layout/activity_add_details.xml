@@ -69,12 +69,12 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:hint="Enter Channeling for"
+                android:hint="Enter Location"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterFor"
+                    android:id="@+id/idEdtCenterLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -150,7 +150,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:importantForAutofill="no"
-                    android:inputType="text"
+                    android:inputType="textMultiLine|textImeMultiLine"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />

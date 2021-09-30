@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
     private FloatingActionButton addFAB;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private ArrayList<CenterRVModal> centerRVModalArrayList;
+    private ArrayList<CenterRVModal>centerRVModalArrayList;
     private RelativeLayout bottomSheetRL;
     private CenterRVAdapter centerRVAdapter;
     private FirebaseAuth mAuth;
@@ -63,22 +64,23 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
                 startActivity(new Intent(MainActivity.this,AddDetails.class));
             }
         });
+          getAllCenters();
     }
 
-    private void getAllcenters(){
+    private void getAllCenters(){
         centerRVModalArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
                 loadingPB.setVisibility(View.GONE);
-                centerRVModalArrayList.add(snapshot.getValue(CenterRVModal.class));
+               centerRVModalArrayList.add(snapshot.getValue(CenterRVModal.class));
                 centerRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
-                 loadingPB.setVisibility(View.GONE);
-                 centerRVAdapter.notifyDataSetChanged();
+                loadingPB.setVisibility(View.GONE);
+                centerRVAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -102,60 +104,67 @@ public class MainActivity extends AppCompatActivity implements CenterRVAdapter.C
 
     @Override
     public void onCenterClick(int position) {
-       displayBottomSheet(centerRVModalArrayList.get(position));
+        displayBottomSheet(centerRVModalArrayList.get(position));
     }
-     private void displayBottomSheet(CenterRVModal centerRVModal) {
-          final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-          View layout = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_dialog,bottomSheetRL);
-          bottomSheetDialog.setContentView(layout);
-          bottomSheetDialog.setCancelable(false);
-          bottomSheetDialog.setCanceledOnTouchOutside(true);
-          bottomSheetDialog.show();
+    private void displayBottomSheet(CenterRVModal centerRVModal) {
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        View layout = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_dialog,bottomSheetRL);
+        bottomSheetDialog.setContentView(layout);
+        bottomSheetDialog.setCancelable(false);
+        bottomSheetDialog.setCanceledOnTouchOutside(true);
+        bottomSheetDialog.show();
 
-          TextView centerNameTV = layout.findViewById(R.id.idTVCenterName);
-         TextView centerDescTV = layout.findViewById(R.id.idTVDescription);
-         TextView centerForTV = layout.findViewById(R.id.idTVFor);
-         TextView centerFeeTV = layout.findViewById(R.id.idTVFee);
-         ImageView centerIV = layout.findViewById(R.id.idIVCenter);
-         ImageView editBtn = layout.findViewById(R.id.idBtnEdit);
-         ImageView viewDetailsBtn = layout.findViewById(R.id.idBtnViewDetails);
+        TextView centerNameTV = layout.findViewById(R.id.idTVCenterName);
+        TextView centerDescTV = layout.findViewById(R.id.idTVDescription);
+        TextView centerLocationTV = layout.findViewById(R.id.idTVLocation);
+        TextView centerFeeTV = layout.findViewById(R.id.idTVFee);
+        ImageView centerIV = layout.findViewById(R.id.idIVCenter);
+        Button editBtn = layout.findViewById(R.id.idBtnEdit);
+        Button viewDetailsBtn = layout.findViewById(R.id.idBtnViewDetails);
 
-         centerNameTV.setText(centerRVModal.getCenterName());
-         centerDescTV.setText(centerRVModal.getCenterDescription());
-         centerForTV.setText(centerRVModal.getCenterFor());
-         centerFeeTV.setText("Rs."+centerRVModal.getCenterFee());
-         Picasso.get().load(centerRVModal.getCenterImag()).into(centerIV);
+        centerNameTV.setText(centerRVModal.getCenterName());
+        centerDescTV.setText(centerRVModal.getCenterDescription());
+        centerLocationTV.setText("Location:"+centerRVModal.getCenterLocation());
+        centerFeeTV.setText("Channeling Fee Rs."+centerRVModal.getCenterFee());
+        Picasso.get().load(centerRVModal.getCenterImg()).into(centerIV);
 
-         editBtn.setOnClickListener(new View.OnClickListener(){
-             @Override
-             public void onClick(View v){
+        editBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
                 Intent i = new Intent(MainActivity.this,EditDetails.class);
                 i.putExtra("center",centerRVModal);
                 startActivity(i);
-             }
-         });
-         viewDetailsBtn.setOnClickListener(new View.OnClickListener(){
-             @Override
-             public void onClick(View v){
-                 Intent i = new Intent(Intent.ACTION_VIEW);
-                 i.setData(Uri.parse(centerRVModal.getCenterLink()));
-                 startActivity(i);
-             }
-         });
-     }
-     @Override
+            }
+        });
+        viewDetailsBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(centerRVModal.getCenterLink()));
+                startActivity(i);
+            }
+        });
+    }
+    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-          int id = item.getItemId();
-          switch (id){
-              case R.id.idLogOut:
-                  Toast.makeText(this,"User Logged Out..", Toast.LENGTH_SHORT).show();
-          }
+        int id = item.getItemId();
+        switch (id){
+            case R.id.idLogOut:
+                Toast.makeText(this,"User Logged Out..", Toast.LENGTH_SHORT).show();
+                mAuth.signOut();
+                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(i);
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
 
-        return super.onOptionsItemSelected(item);
+        }
+
     }
 }

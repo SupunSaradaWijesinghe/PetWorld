@@ -70,12 +70,12 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:hint="Enter Channeling for"
+                android:hint="Enter Location"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCenterFor"
+                    android:id="@+id/idEdtCenterLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:importantForAutofill="no"
@@ -151,7 +151,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:importantForAutofill="no"
-                    android:inputType="text"
+                    android:inputType="textMultiLine|textImeMultiLine"
+                    android:singleLine="false"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
@@ -175,7 +176,7 @@
                     android:textColor="@color/white"
                     android:background="@drawable/custom_button_back"
                     android:id="@+id/idBtnUpdateCenter"
-                    android:text="Update \nCenter"
+                    android:text="Update\nCenter"
                     android:textAllCaps="false" />
                 <Button
                     android:layout_width="0dp"
@@ -185,7 +186,7 @@
                     android:textColor="@color/white"
                     android:background="@drawable/custom_button_back"
                     android:id="@+id/idBtnDeleteCenter"
-                    android:text="Update \nCenter"
+                    android:text="Delete\nCenter"
                     android:textAllCaps="false" />
 
 
