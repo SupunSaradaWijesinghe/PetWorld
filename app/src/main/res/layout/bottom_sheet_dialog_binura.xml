@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/idRLBSheet"
+    android:background="@color/blue_shade_1">
+
+    <TextView
+        android:id="@+id/idTVPetBreed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:text="pet Breed"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/idIVPet"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/idTVPetBreed"
+        android:layout_centerVertical="true"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/idTVDescrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVPetBreed"
+        android:layout_margin="4dp"
+        android:layout_toRightOf="@id/idIVPet"
+        android:padding="3dp"
+        android:text="Description"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/idTVLocationPet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVDescrip"
+        android:layout_margin="4dp"
+        android:layout_toRightOf="@id/idIVPet"
+        android:padding="3dp"
+        android:text="Location"
+        android:textColor="@color/white" />
+
+
+    <TextView
+        android:id="@+id/idTVPricce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVLocationPet"
+        android:layout_margin="4dp"
+        android:layout_toRightOf="@id/idIVPet"
+        android:padding="3dp"
+        android:text="Price"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/idTVPricce" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="Edit Pet"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:id="@+id/idBtnPetEdit" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="View Details"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:id="@+id/idBtnPetViewDetails" />
+
+    </LinearLayout>
+
+</RelativeLayout>
